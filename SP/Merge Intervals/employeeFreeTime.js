@@ -1,3 +1,6 @@
+// For ‘K’ employees, we are given a list of intervals representing the working hours of each employee.
+// Our goal is to find out if there is a free interval that is common to all employees.
+// You can assume that each list of employee working hours is sorted on the start time.
 class Interval {
     constructor(start, end) {
         this.start = start;
@@ -9,52 +12,35 @@ class Interval {
     }
 }
 
-const Heap = require('collections/heap'); //http://www.collectionsjs.com
+const find_employee_free_time = (schedules) => {
+    if (!schedules || schedules.length === 0) return [];
 
 
-class EmployeeInterval {
-    constructor(interval, employeeIndex, intervalIndex) {
-        this.interval = interval; // interval representing employee's working hours
-        // index of the list containing working hours of this employee
-        this.employeeIndex = employeeIndex;
-        this.intervalIndex = intervalIndex; // index of the interval in the employee list
-    }
-}
+    const merged = schedules.reduce((merged, schedule) => [...merged, ...schedule]);
+    // Sort in ascending order of schedules
+    merged.sort((a, b) => a.start - b.start);
 
-function find_employee_free_time(schedule) {
-    let n = schedule.length,
-        result = [];
-    if (schedule === null || n === 0) {
-        return result;
-    }
-    minHeap = new Heap([], null, ((a, b) => b.interval.start - a.interval.start));
-    // insert the first interval of each employee to the queue
-    for (i = 0; i < n; i++) {
-        minHeap.push(new EmployeeInterval(schedule[i][0], i, 0));
-    }
-    previousInterval = minHeap.peek().interval;
-    while (minHeap.length > 0) {
-        const queueTop = minHeap.pop();
-        // if previousInterval is not overlapping with the next interval, insert a free interval
-        if (previousInterval.end < queueTop.interval.start) {
-            result.push(new Interval(previousInterval.end, queueTop.interval.start));
-            previousInterval = queueTop.interval;
-        } else { // overlapping intervals, update the previousInterval if needed
-            if (previousInterval.end < queueTop.interval.end) {
-                previousInterval = queueTop.interval;
-            }
-        }
-        // if there are more intervals available for(the same employee, add their next interval
-        const employeeSchedule = schedule[queueTop.employeeIndex];
-        if (employeeSchedule.length > queueTop.intervalIndex + 1) {
-            minHeap.push(new EmployeeInterval(
-                employeeSchedule[queueTop.intervalIndex + 1], queueTop.employeeIndex,
-                queueTop.intervalIndex + 1,
-            ));
+    const result = [];
+
+    let prev = merged[0], start = prev.start, end = prev.end;
+    for (let i = 1; i < merged.length; i++) {
+        let current = merged[i];
+
+        // Check for overlapping intervals
+        // Note that prev ending at the same time as current starts in also overlapping since it means
+        // that there can't be a free time interval between them
+        if (end >= current.start) {
+            start = Math.min(start, current.start);
+            end = Math.max(end, current.end)
+        } else {
+            result.push(new Interval(end, current.start));
+            start = current.start;
+            end = current.end;
         }
     }
+
     return result;
-}
+};
 
 
 let input = [
@@ -91,27 +77,3 @@ for (i = 0; i < result.length; i++) {
     result[i].print_interval();
 }
 console.log();
-
-
-// function find_employee_free_time(schedule) {
-//     const result = [];
-//     const flatSchedule = [];
-
-//     for (let i = 0; i < schedule.length; i++) {
-//       flatSchedule.push(schedule[i][0]);
-//       flatSchedule.push(schedule[i][1]);
-//     }
-//     flatSchedule.sort((a, b) => a.start - b.start);
-
-//     let prev = flatSchedule[0], maxEnd = prev.end;
-
-//     for (let j = 1; j < flatSchedule.length; j++) {
-//       const cur = flatSchedule[j];
-//       if (cur.start > maxEnd) {
-//         result.push(new Interval(maxEnd, cur.start));
-//       }
-//       maxEnd = Math.max(maxEnd, cur.end, prev.end);
-//       prev = cur;
-//     }
-//     return result;
-//   }
