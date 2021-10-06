@@ -41,7 +41,7 @@ const search_in_infinite_array = function (reader, key) {
     return -1;
 };
 
-var reader = new ArrayReader([4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]);
+const reader = new ArrayReader([4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]);
 console.log(search_in_infinite_array(reader, 16))
 console.log(search_in_infinite_array(reader, 11))
 reader = new ArrayReader([1, 3, 8, 10, 15])

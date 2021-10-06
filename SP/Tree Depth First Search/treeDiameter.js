@@ -57,8 +57,8 @@ class TreeDiameter {
 };
 
 
-var treeDiameter = new TreeDiameter()
-var root = new TreeNode(1)
+const treeDiameter = new TreeDiameter()
+const root = new TreeNode(1)
 root.left = new TreeNode(2)
 root.right = new TreeNode(3)
 root.left.left = new TreeNode(4)

@@ -35,7 +35,7 @@ const find_minimum_depth = function (root) {
 
 
 
-var root = new TreeNode(12)
+const root = new TreeNode(12)
 root.left = new TreeNode(7)
 root.right = new TreeNode(1)
 root.right.left = new TreeNode(10)

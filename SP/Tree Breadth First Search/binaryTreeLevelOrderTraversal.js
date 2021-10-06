@@ -44,7 +44,7 @@ const traverse = function (root) {
 
 
 
-var root = new TreeNode(12);
+const root = new TreeNode(12);
 root.left = new TreeNode(7);
 root.right = new TreeNode(1);
 root.left.left = new TreeNode(9);

@@ -31,7 +31,7 @@ const find_path = function (root, sequence) {
 
 
 
-var root = new TreeNode(1)
+const root = new TreeNode(1)
 root.left = new TreeNode(0)
 root.right = new TreeNode(1)
 root.left.left = new TreeNode(1)
