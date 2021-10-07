@@ -3,7 +3,7 @@
 
 let findCPS = function (st) {
     // dp[i][j] will be 'true' if the string from index 'i' to index 'j' is a palindrome
-    var dp = Array(st.length)
+    constdp = Array(st.length)
         .fill(false)
         .map(() => Array(st.length).fill(false));
 

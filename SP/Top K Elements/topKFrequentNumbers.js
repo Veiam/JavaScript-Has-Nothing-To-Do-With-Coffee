@@ -1,6 +1,6 @@
 // Given an unsorted array of numbers, find the top ‘K’ frequently occurring numbers in it.
 
-// const Heap = require('./collections/heap');
+const Heap = require('../../node_modules/collections/heap');
 const find_k_frequent_numbers = function (nums, k) {
 
     // find the frequency of each number\

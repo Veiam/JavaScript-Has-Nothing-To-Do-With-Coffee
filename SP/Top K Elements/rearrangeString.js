@@ -1,6 +1,6 @@
 // Given a string, find if its letters can be rearranged in such a way that no two same characters come next to each other.
 
-// const Heap = require('./collections/heap');
+const Heap = require('../../node_modules/collections/heap');
 const rearrange_string = function (str) {
     const freqMap = {};
     for (let char of str) {

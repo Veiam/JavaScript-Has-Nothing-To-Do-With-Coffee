@@ -1,7 +1,7 @@
 // Given ‘N’ ropes with different lengths, we need to connect these ropes into one big rope with minimum cost.
 // The cost of connecting two ropes is equal to the sum of their lengths.
 
-// const Heap = require('./collections/heap'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
 const minimum_cost_to_connect_ropes = function (ropeLengths) {
     // add all ropes to the min heap
     const minHeap = new Heap(ropeLengths, null, ((a, b) => b - a));

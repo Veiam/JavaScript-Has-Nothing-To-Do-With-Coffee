@@ -1,7 +1,7 @@
 // Given a sorted number array and two integers ‘K’ and ‘X’, find ‘K’ closest numbers to ‘X’ in the array.
 // Return the numbers in the sorted order. ‘X’ is not necessarily present in the array.
 
-// const Heap = require('./collections/heap'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
 function find_closest_elements(arr, K, X) {
     // Since the array is sorted, we can first find the number closest to ‘X’ through Binary Search. Let’s say that number is ‘Y’.
     let low = 0, high = arr.length - 1;

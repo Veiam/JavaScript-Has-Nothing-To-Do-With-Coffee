@@ -3,7 +3,7 @@
 // The constructor of the class should accept an integer array containing initial numbers from the stream and an integer ‘K’.
 // The class should expose a function add(int num) which will store the given number and return the Kth largest number.
 
-// const Heap = require('./collections/heap'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
 class KthLargestNumberInStream {
     constructor(nums, k) {
         this.minHeap = new Heap([], null, ((a, b) => b - a));

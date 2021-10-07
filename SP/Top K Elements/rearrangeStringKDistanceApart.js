@@ -1,6 +1,6 @@
 // Given a string and a number ‘K’, find if the string can be rearranged such that the same characters are at least ‘K’ distance apart from each other.
 
-// const Heap = require('./collections/heap');
+const Heap = require('../../node_modules/collections/heap');
 const reorganize_string = function (str, k) {
     const freqMap = {};
     for (let char of str) {
@@ -51,8 +51,8 @@ console.log(`Reorganized string: ${reorganize_string('Programming', 3)}`);
 console.log(`Reorganized string: ${reorganize_string('aab', 2)}`);
 console.log(`Reorganized string: ${reorganize_string('aapa', 3)}`);
 
-// const Heap = require('./collections/heap'); //http://www.collectionsjs.com
-// const Deque = require('./collections/deque'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
+const Deque = require('../../node_modules/collections/deque'); //http://www.collectionsjs.com
 
 function reorganize_string(str, k) {
     if (k <= 1) {

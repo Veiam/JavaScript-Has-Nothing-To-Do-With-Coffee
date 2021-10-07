@@ -2,7 +2,7 @@
 // Each task will take one CPU interval to execute but once a task has finished,
 // it has a cooling period during which it can’t be run again. If the cooling period for all tasks is ‘K’ intervals,
 // find the minimum number of CPU intervals that the server needs to finish all tasks.
-const Heap = require('./collections/heap');
+const Heap = require('../../node_modules/collections/heap');
 function schedule_tasks(tasks, k) {
     let intervalCount = 0,
         taskFrequencyMap = {};

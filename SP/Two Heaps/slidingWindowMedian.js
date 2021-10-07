@@ -1,6 +1,6 @@
 // Given an array of numbers and a number ‘k’, find the median of all the ‘k’ sized sub-arrays (or windows) of the array.
 
-// const Heap = require("collections/heap");
+const Heap = require("collections/heap");
 class SlidingWindowMedian {
     constructor() {
         this.maxHeap = new Heap([], null, ((a, b) => a - b));

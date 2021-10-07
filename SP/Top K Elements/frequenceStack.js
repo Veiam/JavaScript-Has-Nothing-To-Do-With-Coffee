@@ -1,7 +1,7 @@
 // Design a class that simulates a Stack data structure, implementing the following two operations:
 // push(int num): Pushes the number ‘num’ on the stack.
 // pop(): Returns the most frequent number in the stack. If there is a tie, return the number which was pushed later.
-const Heap = require('./collections/heap'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
 
 class Element {
     constructor(number, frequency, sequenceNumber) {
@@ -51,7 +51,7 @@ class FrequencyStack {
     }
 }
 
-var frequencyStack = new FrequencyStack()
+constfrequencyStack = new FrequencyStack()
 frequencyStack.push(1)
 frequencyStack.push(2)
 frequencyStack.push(3)

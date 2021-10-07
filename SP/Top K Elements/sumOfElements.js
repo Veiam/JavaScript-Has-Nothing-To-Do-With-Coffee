@@ -1,5 +1,5 @@
 // Given an array, find the sum of all numbers between the K1’th and K2’th smallest elements of that array.
-// const Heap = require('./collections/heap'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
 const find_sum_of_elements = function (nums, k1, k2) {
     // insert all numbers in a min heap
     const minHeap = new Heap(nums, null, ((a, b) => b - a));

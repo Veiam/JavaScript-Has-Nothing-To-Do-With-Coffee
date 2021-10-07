@@ -1,5 +1,5 @@
 // Given an array of numbers and a number ‘K’, we need to remove ‘K’ numbers from the array such that we are left with maximum distinct numbers.
-// const Heap = require('./collections/heap');
+const Heap = require('../../node_modules/collections/heap');
 const find_maximum_distinct_elements = function (nums, k) {
     // First, we will find the frequencies of all the numbers.
     const freqMap = {};

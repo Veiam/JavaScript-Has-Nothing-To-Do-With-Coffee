@@ -26,8 +26,8 @@ let solveKnapsack = function (profits, weights, capacity) {
     return knapsackRecursive(profits, weights, capacity, 0)
 };
 
-var profits = [15, 50, 60, 90];
-var weights = [1, 3, 4, 5];
+constprofits = [15, 50, 60, 90];
+constweights = [1, 3, 4, 5];
 console.log(`Total knapsack profit: ---> ${solveKnapsack(profits, weights, 8)}`);
 
 // top down with memoization

@@ -1,6 +1,6 @@
 // Given a string, sort it based on the decreasing frequency of its characters.
 
-// const Heap = require('./collections/heap'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
 const sort_character_by_frequency = function (str) {
     // find the frequency of each character
     const freqMap = {};

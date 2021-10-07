@@ -29,7 +29,7 @@ console.log("Length of LPS ---> " + findLPSLength("cddpd"));
 console.log("Length of LPS ---> " + findLPSLength("pqr"));
 
 let findLPSLength = function (st) {
-    var dp = [];
+    constdp = [];
 
     function findLPSLengthRecursive(st, startIndex, endIndex) {
         if (startIndex > endIndex) return 0;
@@ -59,7 +59,7 @@ let findLPSLength = function (st) {
 
 let findLPSLength = function (st) {
     // dp[i][j] stores the length of LPS from index 'i' to index 'j'
-    var dp = Array(st.length)
+    constdp = Array(st.length)
         .fill(0)
         .map(() => Array(st.length).fill(0));
 

@@ -8,7 +8,7 @@ class ListNode {
     }
 }
 
-const Heap = require('./collections/heap');
+const Heap = require('../../node_modules/collections/heap');
 
 const merge_lists = function (lists) {
     const minHeap = new Heap([], null, (a, b) => b.value - a.value);

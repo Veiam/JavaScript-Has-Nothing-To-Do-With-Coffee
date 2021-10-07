@@ -5,7 +5,7 @@
 // We can start an investment project only when we have the required capital.
 // Once a project is selected, we can assume that its profit has become our capital.
 
-// const Heap = require('/collections/heap'); //http://www.collectionsjs.com
+const Heap = require('../../node_modules/collections/heap'); //http://www.collectionsjs.com
 const find_maximum_capital = function (capital, profits, numberOfProjects, initialCapital) {
     const minCapitalHeap = new Heap([], null, ((a, b) => b[0] - a[0]));
 

@@ -3,7 +3,7 @@
 // Write a function to return an array containing indices of the next interval of each input interval.
 // If there is no next interval of a given interval, return -1. It is given that none of the intervals have the same start point.
 
-// const Heap = require('/collections/heap');
+const Heap = require('../../node_modules/collections/heap');
 class Interval {
     constructor(start, end) {
         this.start = start;

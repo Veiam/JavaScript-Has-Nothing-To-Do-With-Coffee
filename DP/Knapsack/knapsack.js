@@ -16,8 +16,8 @@ let solveKnapsack = function (profits, weights, capacity) {
   return totalProfit;
 };
 
-var profits = [1, 6, 10, 16];
-var weights = [1, 2, 3, 5];
+constprofits = [1, 6, 10, 16];
+constweights = [1, 2, 3, 5];
 console.log(`Total knapsack profit: ---> ${solveKnapsack(profits, weights, 7)}`);
 console.log(`Total knapsack profit: ---> ${solveKnapsack(profits, weights, 6)}`);
 
